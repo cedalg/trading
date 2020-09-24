@@ -17,7 +17,7 @@ response = requests.request("GET", url, headers=headers, params=querystring)
 data = response.json()
 print(data)
 
-#with open('nvidia_nc.json', 'w+') as f:
-#    f.write(response.text)
+with open('nvidia_nc.json', 'w+') as f:
+    f.write(response.text)
 
 
