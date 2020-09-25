@@ -24,7 +24,7 @@ df
 st.write("Les données préalablement récupérer nous décrit donc cette courbe")
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
-graph = plot_figs(df)
+plot_figs(df)
 st.pyplot()
 
 scaled_close_data, training_data_len, close_dataset, close_data, df = prepro(df)
