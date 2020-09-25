@@ -14,8 +14,8 @@ Forkez le projet ou télécharger le code zippé.
 Ensuite ouvrez un terminal dans le dossier que vous venez de télécharger. Exécutez la commande suivante 
 
 ``````shell
-$ pip install requirements.text #si windows est votre système d'exploitation
-$ pip3 install requirements.text #si vous êtes sur ubuntu ou linux
+$ pip install -r requirements.txt #si vous avez python 2
+$ pip3 install -r requirements.txt #si vous avez python3
 ``````
 Cela vous installera toutes les dépendances de librairies dont vous avez besoin afin d'utiliser l'application.
 
