@@ -12,7 +12,7 @@ import pandas as pd
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import LSTM
-from keras.layers import Dropoutr
+
 
 def lstm(x_train, training_data_len, close_dataset, close_data, df, y_train):
     model = Sequential()
