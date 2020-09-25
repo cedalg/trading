@@ -1,22 +1,16 @@
-import pandas as pd
-import numpy as np 
+import os
 import json
-import csv
+import pandas as pd
 
-# Opening JSON file 
-f = open('intel.json',) 
-  
-# returns JSON object as  
-# a dictionary 
-data = json.load(f) 
-
-liste_entreprises = ["NVDA, INTC", "AMD"]
-
-def transfdata(data, liste_entreprises):
+def transfdata(liste_entreprises):
     for entreprise in liste_entreprises:
         os.chdir(f'{entreprise}')
+        f = open(f'{entreprise}.json')
+        data = json.load(f)
+        print(data)
         daily = data['Time Series (Daily)']
         list_daily = []
+        print(os.getcwd())
         for date, value in daily.items():
             d = {}
             d['Company'] = entreprise
@@ -27,13 +21,8 @@ def transfdata(data, liste_entreprises):
             d['Close'] = value['4. close']
             d['Volume'] = value['5. volume']
             list_daily.append(d)
-            print(list_daily)
-            pd.DataFrame(list_daily).to_csv(f'{entreprise}.csv', index=False, header=True))
-
-
-json_to_csv(data, liste_entreprises)
-
-#df = pd.DataFrame(salary)
-#df.to_csv('file2.csv', index=False, header=False)
-
-
+            
+        print(list_daily)
+        pd.DataFrame(list_daily).to_csv(f'{entreprise}.csv', index=False, header=True)
+        print(os.getcwd())
+        os.chdir("..")
